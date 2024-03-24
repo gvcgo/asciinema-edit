@@ -4,8 +4,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/cirocosta/asciinema-edit/cast"
-	"github.com/cirocosta/asciinema-edit/editor"
+	"github.com/gvcgo/asciinema-edit/cast"
+	"github.com/gvcgo/asciinema-edit/editor"
 )
 
 var _ = Describe("Quantize", func() {

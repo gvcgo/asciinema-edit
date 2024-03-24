@@ -3,7 +3,7 @@ package editor
 import (
 	"math"
 
-	"github.com/cirocosta/asciinema-edit/cast"
+	"github.com/gvcgo/asciinema-edit/cast"
 	"github.com/pkg/errors"
 )
 
@@ -11,7 +11,7 @@ import (
 // `from` and `to`.
 //
 // It assumes that the provided `cast` is entirely valid (see
-// `github.com/cirocosta/asciinema-edit/cast#Validate`).
+// `github.com/gvcgo/asciinema-edit/cast#Validate`).
 //
 // If `from == to`:
 //	the exact timestamp is removed.

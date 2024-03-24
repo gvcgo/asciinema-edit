@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cirocosta/asciinema-edit/cast"
-	"github.com/cirocosta/asciinema-edit/commands/transformer"
-	"github.com/cirocosta/asciinema-edit/editor"
+	"github.com/gvcgo/asciinema-edit/cast"
+	"github.com/gvcgo/asciinema-edit/commands/transformer"
+	"github.com/gvcgo/asciinema-edit/editor"
 	"github.com/pkg/errors"
 	"gopkg.in/urfave/cli.v1"
 )

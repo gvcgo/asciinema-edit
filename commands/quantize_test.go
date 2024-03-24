@@ -3,8 +3,8 @@ package commands_test
 import (
 	"math"
 
-	"github.com/cirocosta/asciinema-edit/commands"
-	"github.com/cirocosta/asciinema-edit/editor"
+	"github.com/gvcgo/asciinema-edit/commands"
+	"github.com/gvcgo/asciinema-edit/editor"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

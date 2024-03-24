@@ -5,10 +5,10 @@
 //
 // From [1], asciicast v2 file is a newline-delimited JSON file where:
 //
-// - first line contains header (initial terminal size, timestamp and other
-//   meta-data), encoded as JSON object; and
-// - all following lines form an event stream, each line representing a separate
-//   event, encoded as 3-element JSON array.
+//   - first line contains header (initial terminal size, timestamp and other
+//     meta-data), encoded as JSON object; and
+//   - all following lines form an event stream, each line representing a separate
+//     event, encoded as 3-element JSON array.
 //
 // [1]: https://github.com/asciinema/asciinema/blob/49a892d9e6f57ab3a774c0835fa563c77cf6a7a7/doc/asciicast-v2.md.
 package cast
@@ -42,6 +42,9 @@ type Header struct {
 	// Timestamp is the unix timestamp of the beginning of the
 	// recording session.
 	Timestamp uint `json:"timestamp,omitempty"`
+
+	// duration
+	Duration float64 `json:"duration,omitempty"`
 
 	// Command corresponds to the name of the command that was
 	// recorded.
@@ -250,9 +253,7 @@ func Decode(reader io.Reader) (cast *Cast, err error) {
 		return
 	}
 
-	var (
-		decoder *json.Decoder
-	)
+	var decoder *json.Decoder
 
 	cast = new(Cast)
 
@@ -312,6 +313,4 @@ func Decode(reader io.Reader) (cast *Cast, err error) {
 			Data: data,
 		})
 	}
-
-	return
 }
