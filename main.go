@@ -18,7 +18,7 @@ func main() {
 	app.Version = version + " - " + commit
 	app.Usage = "edit recorded asciinema casts"
 	app.Authors = []cli.Author{
-		cli.Author{
+		{
 			Name:  "Ciro da Silva da Costa",
 			Email: "ciro.costa@liferay.com",
 		},

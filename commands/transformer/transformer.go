@@ -28,7 +28,7 @@ type Transformation interface {
 //
 // We can illustrate the whole process like this:
 //
-//   input ==> transformation ==> output
+//	input ==> transformation ==> output
 //
 // Note.: `input` will be consumed until EOF before the transformation
 // is applied.

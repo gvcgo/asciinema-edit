@@ -14,9 +14,11 @@ import (
 // `github.com/gvcgo/asciinema-edit/cast#Validate`).
 //
 // If `from == to`:
+//
 //	the exact timestamp is removed.
 //
 // If `from < to`:
+//
 //	all timestamps from `from` to `to` are removed (both included).
 //
 // 1. search a time that is close to `from`; then
@@ -41,20 +43,22 @@ func Cut(c *cast.Cast, from, to float64) (err error) {
 		return
 	}
 
-	var (
-		fromIdx = -1
-		toIdx   = -1
-	)
+	// var (
+	// 	fromIdx = -1
+	// 	toIdx   = -1
+	// )
 
-	for idx, ev := range c.EventStream {
-		if ev.Time == from {
-			fromIdx = idx
-		}
+	// for idx, ev := range c.EventStream {
+	// 	if ev.Time == from {
+	// 		fromIdx = idx
+	// 	}
 
-		if ev.Time == to {
-			toIdx = idx
-		}
-	}
+	// 	if ev.Time == to {
+	// 		toIdx = idx
+	// 	}
+	// }
+
+	fromIdx, toIdx := FindIndex(c.EventStream, from, to)
 
 	if fromIdx == -1 {
 		err = errors.Errorf("couldn't find initial frame")

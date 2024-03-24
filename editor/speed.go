@@ -28,20 +28,23 @@ func Speed(c *cast.Cast, factor, from, to float64) (err error) {
 		return
 	}
 
-	var (
-		fromIdx = -1
-		toIdx   = -1
-	)
+	// var (
+	// 	fromIdx = -1
+	// 	toIdx   = -1
+	// )
 
-	for idx, ev := range c.EventStream {
-		if ev.Time == from {
-			fromIdx = idx
-		}
+	// for idx, ev := range c.EventStream {
+	// 	if ev.Time == from {
+	// 		fmt.Println("-- ", ev.Time)
+	// 		fromIdx = idx
+	// 	}
 
-		if ev.Time == to {
-			toIdx = idx
-		}
-	}
+	// 	if ev.Time == to {
+	// 		toIdx = idx
+	// 	}
+	// }
+
+	fromIdx, toIdx := FindIndex(c.EventStream, from, to)
 
 	if fromIdx == -1 {
 		err = errors.Errorf("couldn't find initial frame")

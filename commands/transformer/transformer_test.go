@@ -36,7 +36,7 @@ var _ = Describe("Transformer", func() {
 
 			BeforeEach(func() {
 				transformation = &DummyTransformation{}
-				tempDir, err = ioutil.TempDir("", "")
+				tempDir = os.TempDir()
 				Expect(err).To(Succeed())
 			})
 
